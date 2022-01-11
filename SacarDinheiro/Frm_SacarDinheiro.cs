@@ -53,6 +53,7 @@ namespace SacarDinheiro
 
         private void Btn_Sacar_Click(object sender, EventArgs e)
         {
+            // Limpa os resultados anteriores antes de informar os novos resultados
             lbl_Notas100.Text = "Notas de 100:";
             lbl_Notas50.Text = "Notas de 50:";
             lbl_Notas20.Text = "Notas de 20:";
@@ -60,6 +61,8 @@ namespace SacarDinheiro
             lbl_Notas5.Text = "Notas de 5:";
             lbl_Notas2.Text = "Notas de 2:";
             lbl_Moedas1.Text = "Moedas de 1:";
+
+            // Verifica se o valor informado é valido e se for informa quantas notas/moedas devem ser sacadas para o valor informado
             if (Dinheiro.VericarEntrada(txt_ValorSacar.Text.Trim(), saldoTotal, Text))
             {
                 int[] qtdNotasSacadas = Dinheiro.SacarValor(Convert.ToDouble(txt_ValorSacar.Text.Trim()), notasDisponiveis);
