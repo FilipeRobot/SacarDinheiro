@@ -56,7 +56,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(262, 190);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(262, 240);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -73,6 +74,8 @@
             // 
             // ltbNotas
             // 
+            this.ltbNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ltbNotas.BackColor = System.Drawing.SystemColors.Control;
             this.ltbNotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ltbNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
@@ -89,21 +92,21 @@
             this.ltbNotas.Location = new System.Drawing.Point(12, 37);
             this.ltbNotas.Name = "ltbNotas";
             this.ltbNotas.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.ltbNotas.Size = new System.Drawing.Size(226, 176);
+            this.ltbNotas.Size = new System.Drawing.Size(226, 192);
             this.ltbNotas.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 236);
+            this.ClientSize = new System.Drawing.Size(349, 286);
             this.Controls.Add(this.ltbNotas);
             this.Controls.Add(this.txtEntrada);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(365, 275);
+            this.MaximumSize = new System.Drawing.Size(365, 325);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(365, 275);
             this.Name = "Form1";
