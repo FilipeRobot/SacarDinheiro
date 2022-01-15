@@ -21,11 +21,11 @@ namespace SacarDinheiroTemp.LibTemp
         ///         </br>
         ///     </para>
         /// </returns>
-        public static int[] SacarValor(double valorSacar, float[] notasDisponiveis)
+        public static int[] SacarValor(double valorSacar, double[] notasDisponiveis)
         {
             int[] qtdNotasSacadas = new int[notasDisponiveis.Length];
 
-            foreach (float nota in notasDisponiveis)
+            foreach (double nota in notasDisponiveis)
             {
                 if (valorSacar == 0)
                 {
@@ -105,11 +105,12 @@ namespace SacarDinheiroTemp.LibTemp
                 MessageBox.Show("Saldo Insuficiente", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-            else if (valorSacar.Contains('.'))
-            {
-                MessageBox.Show("Formato numerico errado, o separador de casas decimais é virgula!", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //Uma vez que tem o replace na chamada do metodo essa verificação torna-se descessaria
+            //else if (valorSacar.Contains('.'))
+            //{
+            //    MessageBox.Show("Formato numerico errado, o separador de casas decimais é virgula!", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
             return true;
         }
     }
