@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SacarDinheiro.Lib
@@ -21,11 +18,11 @@ namespace SacarDinheiro.Lib
         ///         </br>
         ///     </para>
         /// </returns>
-        public static int[] SacarValor(double valorSacar, float[] notasDisponiveis)
+        public static int[] SacarValor(double valorSacar, double[] notasDisponiveis)
         {
             int[] qtdNotasSacadas = new int[notasDisponiveis.Length];
 
-            foreach (float nota in notasDisponiveis)
+            foreach (double nota in notasDisponiveis)
             {
                 if (valorSacar == 0)
                 {
@@ -41,8 +38,6 @@ namespace SacarDinheiro.Lib
                 if (qtdNotas > 0)
                 {
                     valorSacar -= Math.Round(qtdNotas * nota, 2); // remove da variavel "valorSacar" o valor total equivalente a quantidade de notas do loop atual
-
-                    //valorSacar -= qtdNotas * nota;
 
                     for (int i = 0; i < notasDisponiveis.Length; i++)
                     {
@@ -103,11 +98,6 @@ namespace SacarDinheiro.Lib
             else if (Convert.ToDouble(valorSacar) > saldoTotal)
             {
                 MessageBox.Show("Saldo Insuficiente", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            else if (valorSacar.Contains('.'))
-            {
-                MessageBox.Show("Formato numerico errado, o separador de casas decimais é virgula!", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

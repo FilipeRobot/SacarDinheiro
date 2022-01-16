@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SacarDinheiro.Lib;
 
@@ -39,7 +32,7 @@ namespace SacarDinheiro
          */
 
         private const int saldoTotal = 17523; //saldo disponível para saque
-        private readonly float[] notasDisponiveis = { 100, 50, 20, 10, 5, 2, 1 }; // novas notas/moedas em ordem crescente
+        private readonly double[] notasDisponiveis = { 100, 50, 20, 10, 5, 2, 1 }; // novas notas/moedas em ordem crescente
         public Frm_SacarDinheiro()
         {
             InitializeComponent();
@@ -63,9 +56,9 @@ namespace SacarDinheiro
             lbl_Moedas1.Text = "Moedas de 1:";
 
             // Verifica se o valor informado é valido e se for informa quantas notas/moedas devem ser sacadas para o valor informado
-            if (Dinheiro.VericarEntrada(txt_ValorSacar.Text.Trim(), saldoTotal, Text))
+            if (Dinheiro.VericarEntrada(txt_ValorSacar.Text.Trim().Replace('.', ','), saldoTotal, Text))
             {
-                int[] qtdNotasSacadas = Dinheiro.SacarValor(Convert.ToDouble(txt_ValorSacar.Text.Trim()), notasDisponiveis);
+                int[] qtdNotasSacadas = Dinheiro.SacarValor(Convert.ToDouble(txt_ValorSacar.Text.Trim().Replace('.', ',')), notasDisponiveis);
 
                 for (int i = 0; i < qtdNotasSacadas.Length; i++)
                 {
