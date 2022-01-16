@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SacarDinheiro.Lib;
 
@@ -39,7 +32,7 @@ namespace SacarDinheiro
          */
 
         private const int saldoTotal = 17523; //saldo disponível para saque
-        private readonly float[] notasDisponiveis = { 100, 50, 20, 10, 5, 2, 1 }; // novas notas/moedas em ordem crescente
+        private readonly double[] notasDisponiveis = { 100, 50, 20, 10, 5, 2, 1 }; // novas notas/moedas em ordem crescente
         public Frm_SacarDinheiro()
         {
             InitializeComponent();
@@ -63,9 +56,9 @@ namespace SacarDinheiro
             lbl_Moedas1.Text = "Moedas de 1:";
 
             // Verifica se o valor informado é valido e se for informa quantas notas/moedas devem ser sacadas para o valor informado
-            if (Dinheiro.VericarEntrada(txt_ValorSacar.Text.Trim(), saldoTotal, Text))
+            if (Dinheiro.VericarEntrada(txt_ValorSacar.Text.Trim().Replace('.', ','), saldoTotal, Text))
             {
-                int[] qtdNotasSacadas = Dinheiro.SacarValor(Convert.ToDouble(txt_ValorSacar.Text.Trim()), notasDisponiveis);
+                int[] qtdNotasSacadas = Dinheiro.SacarValor(Convert.ToDouble(txt_ValorSacar.Text.Trim().Replace('.', ',')), notasDisponiveis);
 
                 for (int i = 0; i < qtdNotasSacadas.Length; i++)
                 {
@@ -107,25 +100,6 @@ namespace SacarDinheiro
             if (e.KeyCode == Keys.Enter)
             {
                 Btn_Sacar_Click(sender, e);
-            }
-            else if(e.KeyCode == Keys.OemPeriod) //Keys.OemPeriod = botão ponto entre a virgula e o ponto e virgula acima da tecla Win Esquerda
-            {
-                MessageBox.Show("O separador de casas decimais é virgula", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (!txt_ValorSacar.Text.Equals(String.Empty))
-                {
-                    txt_ValorSacar.Text = txt_ValorSacar.Text.Remove(txt_ValorSacar.Text.Length - 1);
-                }
-            }
-            else if (Keys.Decimal.CompareTo(e.KeyCode) == 1)
-            {
-                if(e.KeyValue == 194) // botão numPad ponto = 194
-                {
-                    MessageBox.Show("O separador de casas decimais é virgula", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (!txt_ValorSacar.Text.Equals(String.Empty))
-                    {
-                        txt_ValorSacar.Text = txt_ValorSacar.Text.Remove(txt_ValorSacar.Text.Length - 1);
-                    }
-                }
             }
         }
     }
