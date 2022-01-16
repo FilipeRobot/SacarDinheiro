@@ -101,25 +101,6 @@ namespace SacarDinheiro
             {
                 Btn_Sacar_Click(sender, e);
             }
-            else if(e.KeyCode == Keys.OemPeriod) //Keys.OemPeriod = botão ponto entre a virgula e o ponto e virgula acima da tecla Win Esquerda
-            {
-                MessageBox.Show("O separador de casas decimais é virgula", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (!txt_ValorSacar.Text.Equals(String.Empty))
-                {
-                    txt_ValorSacar.Text = txt_ValorSacar.Text.Remove(txt_ValorSacar.Text.Length - 1);
-                }
-            }
-            else if (Keys.Decimal.CompareTo(e.KeyCode) == 1)
-            {
-                if(e.KeyValue == 194) // botão numPad ponto = 194
-                {
-                    MessageBox.Show("O separador de casas decimais é virgula", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (!txt_ValorSacar.Text.Equals(String.Empty))
-                    {
-                        txt_ValorSacar.Text = txt_ValorSacar.Text.Remove(txt_ValorSacar.Text.Length - 1);
-                    }
-                }
-            }
         }
     }
 }

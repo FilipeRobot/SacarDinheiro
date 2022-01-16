@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SacarDinheiro.Lib
@@ -87,9 +86,9 @@ namespace SacarDinheiro.Lib
             }
             else if (!double.TryParse(valorSacar, out _))
             {
-                MessageBox.Show("Por favor informe um valor numerico\nFormato R$1,00", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor informe um valor numerico válido\nFormato: R$1,00 ou R$1000,00", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            } //Verifica se é possivel converter o valor informado em um valor double, se não for possivel então o valor informado é uma letra ou texto então informa o usuario junto com o formato numerico aceito pelo programa
+            } //Verifica se é possivel converter o valor informado em um valor double, se não for possivel então o valor informado é uma letra, texto ou um valor numerico inválido então informa o usuario junto com o formato numerico aceito pelo programa
             else if (Convert.ToDouble(valorSacar) <= 0)
             {
                 MessageBox.Show("Para sacar informe um valor numerico maior que 0", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
