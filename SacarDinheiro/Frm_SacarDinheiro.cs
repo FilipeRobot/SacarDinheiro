@@ -7,7 +7,7 @@ namespace SacarDinheiro
     public partial class Frm_SacarDinheiro : Form
     {
 
-        /* Nomes e motivos dos itens do formulario
+        /* Nomes e motivos dos itens do formulário
          * 
          * Label - Controle Comum
          *      lbl_ValorSacar ==> Não faz nada de especial
@@ -20,19 +20,19 @@ namespace SacarDinheiro
          *      lbl_Moedas1 ==> Informa a quantidade de moedas de R$ 1,00 sacadas
          *      lbl_SaldoDisponivel ==> Informa o saldo total disponível, fixo em R$ 17523,00
          *      
-         * GroupBox - Conteiner
-         *      gpb_Resultado ==> Apenas Agrupa no formulario a quantidade de notas sacadas
+         * GroupBox - Contêiner
+         *      gpb_Resultado ==> Apenas Agrupa no formulário a quantidade de notas sacadas
          *      
          * TextBox - Controle Comum
-         *      txt_ValorSacar ==> Recebe o valor que o usuario deseja sacar
+         *      txt_ValorSacar ==> Recebe o valor que o usuário deseja sacar
          *      
          * Button - Controle Comum
          *      btn_Sacar ==> Botão para sacar um determinado valor (recebido do txt_ValorSacar)
-         *                   e mostrar a quantidade de notas e moedas a serem entregues nas respectivas areas do formulario
+         *                   e mostrar a quantidade de notas e moedas a serem entregues nas respectivas areas do formulário
          */
 
-        private const int saldoTotal = 17523; //saldo disponível para saque
-        private readonly double[] notasDisponiveis = { 100, 50, 20, 10, 5, 2, 1 }; // novas notas/moedas em ordem crescente
+        private const int saldoTotal = 17523; // Saldo disponível para saque
+        private readonly double[] notasDisponiveis = { 100, 50, 20, 10, 5, 2, 1 }; // Novas notas/moedas em ordem crescente
         public Frm_SacarDinheiro()
         {
             InitializeComponent();
