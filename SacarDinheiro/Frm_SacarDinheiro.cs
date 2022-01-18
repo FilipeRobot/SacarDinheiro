@@ -6,7 +6,7 @@ namespace SacarDinheiro
 {
     public partial class Frm_SacarDinheiro : Form
     {
-
+        //Comentario desnecessário
         /* Nomes e motivos dos itens do formulário
          * 
          * Label - Controle Comum
@@ -41,9 +41,9 @@ namespace SacarDinheiro
         private void Lbl_ValorSacar_Click(object sender, EventArgs e)
         {
             txt_ValorSacar.Focus();
-            
         }
 
+       
         private void Btn_Sacar_Click(object sender, EventArgs e)
         {
             // Limpa os resultados anteriores antes de informar os novos resultados
@@ -92,6 +92,7 @@ namespace SacarDinheiro
                 }
                 
             }
+
             txt_ValorSacar.Focus();
         }
 
@@ -101,6 +102,35 @@ namespace SacarDinheiro
             {
                 Btn_Sacar_Click(sender, e);
             }
+        }
+
+       
+
+        //======================================================================//
+        void Limpar_Interface_Notas(string valor)
+        {
+            lbl_Notas100.Text = valor;
+            lbl_Notas50.Text = valor;
+            lbl_Notas20.Text = valor;
+            lbl_Notas10.Text = valor;
+            lbl_Notas5.Text = valor;
+            lbl_Notas2.Text = valor;
+            lbl_Moedas1.Text = valor;
+        }
+
+        private void btnTeste_Click(object sender, EventArgs e)
+        {
+            Dinheiro d1 = new Dinheiro();
+            d1.SacarTeste();
+            d1.SacarTeste();
+            d1.SacarTeste();
+
+
+            Dinheiro d2 = new Dinheiro();
+            d2.SacarTeste();
+            
+
+            MessageBox.Show($"Cliente 1 :{d1.valorTeste} Cliente 2 :{d2.valorTeste} ");
         }
     }
 }

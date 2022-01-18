@@ -5,6 +5,8 @@ namespace SacarDinheiro.Lib
 {
     internal class Dinheiro
     {
+        public  int valorTeste = 0;
+
         /// <summary>
         /// Método para sacar o valor informado pelo usuário
         /// </summary>
@@ -79,12 +81,64 @@ namespace SacarDinheiro.Lib
         /// <param name="tituloMsg">Título para as mensagens</param>
         public static bool VericarEntrada(string valorSacar, int saldoTotal, string tituloMsg)
         {
-            if (valorSacar.Equals(string.Empty))
+            //double valorSacarLocal = 0;
+            //bool continuar = true;
+            //string msgRetorno = string.Empty;
+
+
+            ////verificar valor digitado
+            //if (continuar)
+            //{
+            //    try
+            //    {
+            //        valorSacarLocal = double.Parse(valorSacar);
+            //        if (valorSacarLocal==0)
+            //        {
+            //            msgRetorno = "Por favor informe um valor numérico válido\nFormato: R$1,00 ou R$1000,00";
+            //            continuar = false;
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        msgRetorno = "Por favor informe um valor numérico válido\nFormato: R$1,00 ou R$1000,00";
+            //        continuar = false;
+            //    }
+            //}
+
+
+
+
+
+            ////verificar valor digitado
+            //if (continuar)
+            //{
+            //    if (valorSacar.Length == 0)
+            //    {
+            //        msgRetorno = "Para sacar primeiro informe algum valor!";
+            //        continuar = false;
+            //    }
+            //}
+
+            ////veifica se valor digitado é numerico
+            //if (continuar)
+            //{
+            //    if (!double.TryParse(valorSacar, out _))
+            //    {
+            //        msgRetorno = "Por favor informe um valor numérico válido\nFormato: R$1,00 ou R$1000,00";
+            //        continuar =  false;
+
+            //    } 
+            //}
+
+
+
+
+            if (valorSacar.Length == 0)
             {
                 MessageBox.Show("Para sacar primeiro informe algum valor!", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (!double.TryParse(valorSacar, out _))
+            else if (!double.TryParse(valorSacar, out _)) // Errado, verificar outros comentarios
             {
                 MessageBox.Show("Por favor informe um valor numérico válido\nFormato: R$1,00 ou R$1000,00", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -99,7 +153,22 @@ namespace SacarDinheiro.Lib
                 MessageBox.Show("Saldo Insuficiente", tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+
+
+            //if (!continuar)
+            //{
+            //    MessageBox.Show(msgRetorno, tituloMsg, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //return continuar;
             return true;
         }
+
+        
+        //=====================================================================//
+        public  void SacarTeste()
+        {
+            valorTeste++;
+        }
+      
     }
 }

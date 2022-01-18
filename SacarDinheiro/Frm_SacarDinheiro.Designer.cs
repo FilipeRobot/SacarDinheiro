@@ -40,6 +40,7 @@
             this.lbl_SaldoDisponivel = new System.Windows.Forms.Label();
             this.btn_Sacar = new System.Windows.Forms.Button();
             this.txt_ValorSacar = new System.Windows.Forms.TextBox();
+            this.btnTeste = new System.Windows.Forms.Button();
             this.gpb_Resultado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,11 +204,28 @@
             this.txt_ValorSacar.TabIndex = 4;
             this.txt_ValorSacar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_ValorSacar_KeyDown);
             // 
+            // btnTeste
+            // 
+            this.btnTeste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTeste.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTeste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTeste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTeste.Location = new System.Drawing.Point(215, 104);
+            this.btnTeste.Name = "btnTeste";
+            this.btnTeste.Size = new System.Drawing.Size(117, 41);
+            this.btnTeste.TabIndex = 5;
+            this.btnTeste.Text = "Teste";
+            this.btnTeste.UseVisualStyleBackColor = true;
+            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            // 
             // Frm_SacarDinheiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 236);
+            this.Controls.Add(this.btnTeste);
             this.Controls.Add(this.txt_ValorSacar);
             this.Controls.Add(this.btn_Sacar);
             this.Controls.Add(this.lbl_SaldoDisponivel);
@@ -244,6 +262,7 @@
         private System.Windows.Forms.Label lbl_Notas50;
         private System.Windows.Forms.Label lbl_Notas100;
         private System.Windows.Forms.TextBox txt_ValorSacar;
+        private System.Windows.Forms.Button btnTeste;
     }
 }
 
